@@ -1,0 +1,12 @@
+C:\Users\jhogan\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\Multimodel Dotnet QuickStart.csprojAssemblyReference.cache
+C:\Users\jhogan\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\Multimodel Dotnet QuickStart.csproj.CoreCompileInputs.cache
+C:\Users\jhogan\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\multimodel-dotnet-quickstart.exe.config
+C:\Users\jhogan\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\multimodel-dotnet-quickstart.exe
+C:\Users\jhogan\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\multimodel-dotnet-quickstart.pdb
+C:\Users\jhogan\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\InterSystems.Data.IRISClient.dll
+C:\Users\jhogan\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\InterSystems.Data.XEP.dll
+C:\Users\jhogan\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\InterSystems.Data.IRISClient.xml
+C:\Users\jhogan\source\repos\ConsoleApp1\ConsoleApp1\bin\Debug\InterSystems.Data.XEP.xml
+C:\Users\jhogan\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\Multimodel Dotnet QuickStart.csproj.CopyComplete
+C:\Users\jhogan\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\multimodel-dotnet-quickstart.exe
+C:\Users\jhogan\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\multimodel-dotnet-quickstart.pdb

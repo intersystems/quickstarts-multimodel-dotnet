@@ -1,4 +1,4 @@
-﻿/* Purpose: This demo shows using objects, SQL, and native access side-by-side in a .NET application, 
+/* Purpose: This demo shows using objects, SQL, and native access side-by-side in a .NET application, 
 * connecting to InterSystems IRIS.
 *
 * To Test: Run to see objects and SQL working side-by-side. Then uncomment the line to execute StoreAirfare to see
@@ -22,8 +22,8 @@ namespace Demo
         {
             // If you are using a remote instance, update IP and password here
             String user = "SuperUser";
-            String pass = "SYS";
-            String server = "localhost";
+            String password = "SYS";
+            String IP = "localhost";
             int port = 51773;
 
             try
@@ -32,7 +32,7 @@ namespace Demo
                 // For more details on EventPersister, visit 
                 // https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=BNETXEP_xep
                 EventPersister xepPersister = PersisterFactory.CreatePersister();
-                xepPersister.Connect(server, port, "User", user, pass);
+                xepPersister.Connect(IP, port, "User", user, password);
                 
                 Console.WriteLine("Connected to InterSystems IRIS");
                 xepPersister.DeleteExtent("Demo.Airport");   // Remove old test data
@@ -52,7 +52,7 @@ namespace Demo
                 getAirports(connection);
 
                 // Store natively - Uncomment the following line for task 3
-                StoreAirfare(irisNative);
+                // StoreAirfare(irisNative);
                 Console.ReadLine();
                 // Close everything
                 xepEvent.Close();

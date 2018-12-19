@@ -12,4 +12,4 @@ To run:
 3. Change username, password, IP, port and username in `multimodelQS.cs` file to point to your instance of InterSystems IRIS.
 4. Run code to see objects and SQL working side-by-side.
  
-*NOTE:* We recommend to use *Microsoft Visual Studio* to run .NET Multimodel QuickStart code. In case you want to run it with *Visual Studio Code*, please switch to `VisualStudioCode` branch and follow the instructions there.
+**NOTE:** We recommend to use **Microsoft Visual Studio** to run .NET Multimodel QuickStart code. In case you want to run it with **Visual Studio Code**, please switch to `VisualStudioCode` branch and follow the instructions there.

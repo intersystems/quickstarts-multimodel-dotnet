@@ -52,7 +52,7 @@ namespace Demo{
 				getAirports(connection);
 				
 				// Store natively - Uncomment the following line for task 3
-				StoreAirfare(irisNative);
+				// StoreAirfare(irisNative);
 					
 				// Close everything
 			    xepEvent.Close();

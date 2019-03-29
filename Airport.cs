@@ -1,10 +1,12 @@
 using System;
 using System.Numerics;
+using id = InterSystems.XEP.Attributes.Id;
 
 namespace Demo{
     class Airport{
-        private String name;
+        [id(generated=false)]
         private String code;
+        private String name;
         private Location location;
         
         

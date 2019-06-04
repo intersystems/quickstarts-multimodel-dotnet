@@ -2,15 +2,30 @@
 
 This code shows multi-model access to InterSystems IRIS Data Platform in .NET.
 
-The QuickStart can be found at https://learning.intersystems.com/course/view.php?name=Multimodel 
+The sample is used in the [Multi-Model QuickStart](https://learning.intersystems.com/course/view.php?name=Multimodel).
 It shows object, relational, and native access from a .NET application to InterSystems IRIS. Airport data is stored using objects, retrieved using SQL, and a custom data structure is created using the Native API to handle route information between airports.
 
-## To run in InterSystems Learning Labs or a cloud marketplace Evaluator Edition (on AWS, GCP, or Azure)
-1. Open MultiModelQS.cs to view the code.
-2. On AWS, GCP, or Azure ONLY: Modify ip to "try-iris". Verify username and password are valid for your instance of InterSystems IRIS as well. ((Please skip this step if using InterSystems Learning Labs)
-3. In the integrated terminal, type: `dotnet run`
+## Run the sample
 
-## To run locally
-1. Clone the repo and open it in Visual Studio Code
-2. Change ip, port, username, and password to point to your instance of InterSystems IRIS
-3. Run: `dotnet run`
+In the integrated terminal, type: 
+* `cd /home/project/quickstarts-multimodel-dotnet`
+* `dotnet run`
+
+## Output
+
+If all works correctly, you will see a list of airports output. Data is stored using XEP (objects) and retrieved using ADO.net (relationally).  
+
+If you would like to see how to store data natively using .NET:
+1. Find and uncomment the following line:  
+`// storeAirfare(irisNative);`
+2. Enter departure airport: **BOS**
+3. Enter destination airport: **AUS**
+
+The output should say:  
+>Printed to ^airport global. The distance in miles between BOS and AUS is: 1698. This path has routes
+
+Other routes may be null.
+
+## Keep Exploring
+
+To continue with another Java example with InterSystems IRIS, see the [.NET QuickStart](https://learning.intersystems.com/course/view.php?name=.NET%20QS)

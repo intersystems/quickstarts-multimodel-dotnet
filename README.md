@@ -16,13 +16,17 @@ In the integrated terminal, type:
 If all works correctly, you will see a list of airports output. Data is stored using XEP (objects) and retrieved using ADO.net (relationally).  
 
 If you would like to see how to store data natively using .NET:
-1. Find and uncomment the following line:  
-`// storeAirfare(irisNative);`
+1. Find and uncomment the following lines:   
+`// storeAirfare(irisNative);`  
+`// checkAirfare(irisNative);`
 2. Enter departure airport: **BOS**
 3. Enter destination airport: **AUS**
 
 The output should say:  
->Printed to ^airport global. The distance in miles between BOS and AUS is: 1698. This path has routes
+>Printed to ^airport global. The distance in miles between BOS and AUS is: 1698.  
+>The following routes exist for this path:
+>  -AA150: 450 USD
+>  -AA290: 550 USD
 
 Other routes may be null.
 

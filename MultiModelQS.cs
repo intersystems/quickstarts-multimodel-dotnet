@@ -1,7 +1,7 @@
 /* Purpose: This demo shows using objects, SQL, and native access side-by-side in a .NET application, 
 * connecting to InterSystems IRIS.
 *
-* To Test: Run to see objects and SQL working side-by-side. Then uncomment the line to execute storeAirfare to see
+* To Test: Run to see objects and SQL working side-by-side. Then uncomment the lines to execute storeAirfare and checkAirfare to see
 * creating a custom data structure using the Native API.	
 */
 
@@ -10,7 +10,6 @@ using InterSystems.Data.IRISClient;
 using InterSystems.Data.IRISClient.ADO;
 using InterSystems.XEP;
 using System.Collections.Generic;
-
 
 namespace Demo{
 
@@ -49,8 +48,9 @@ namespace Demo{
 				// Get all airports using ADO.NET
 				getAirports(connection);
 				
-				// Store natively - Uncomment the following line for task 3
+				// Store natively - Uncomment the following lines to see Native access
 				// storeAirfare(irisNative);
+                // checkAirfare(irisNative);
 					
 				// Close everything
 			    xepEvent.Close();
@@ -152,34 +152,59 @@ namespace Demo{
 			}
 		}
 		
-		// Create a custom data structure to store airfare in a graph-like structure and retrieve airfare based on nodes
-		// Takes departure airport and arrival airport as arguments
+	    // Create a custom data structure to store airport distance and airfare information in a graph-like structure.
+	    // Query this information with the interactive checkAirfare() method
 		public static void storeAirfare(IRIS irisNative)
 		{		
 			// Store routes and distance between airports 
-			// This API sets the value, for a global, with the following keys
-			// For example, ^airport("BOS","AUS") = 1698
+			// The global we'll populate has two levels:
+		    // ^airport(from, to) = distance
+		    // ^airport(from, to, flight) = fare
+
+		    // This IRIS native API sets the value for a global at the specified subscript level(s)
+		    // For example, to set ^airport("BOS","AUS") = 1698
 			irisNative.Set("1698","^airport", "BOS","AUS");
 			irisNative.Set("450","^airport", "BOS","AUS","AA150");
 			irisNative.Set("550","^airport", "BOS","AUS","AA290");
+
+            irisNative.Set("280","^airport", "BOS", "PHL");
 			irisNative.Set("200","^airport", "BOS","PHL","UA110");
+
+            irisNative.Set("1490","^airport","BOS","BIS");
 			irisNative.Set("700","^airport", "BOS","BIS","AA330");
 			irisNative.Set("710","^airport", "BOS","BIS","UA208");
 			
-			// Start interactive prompt
-			Console.WriteLine("Enter departure airport: ");
-			String fromAirport = Console.ReadLine();
-			Console.WriteLine("Enter destination airport: ");
-			String toAirport = Console.ReadLine();
-			
-			// Query for routes based on input
-			String hasRoutes = "This path has no routes";
-			int isDefined = irisNative.IsDefined("^airport", fromAirport, toAirport);
-					
-			if (isDefined==11 || isDefined==1 ) { hasRoutes =  "This path has routes"; } 
-			Console.WriteLine("");
-			Console.WriteLine("Printed to ^airport global. The distance in miles between "+ fromAirport + " and " + toAirport + 
-					" is: " + irisNative.GetString("^airport", fromAirport, toAirport) + ". " + hasRoutes );
-		}
+			Console.WriteLine("Stored fare and distance data in ^airport global.");
+        }
+
+        // Simple interactive method using IRIS native API to consult the data structure populated in storeAirfare()
+        public static void checkAirfare(IRIS irisNative)
+        {		
+            // Prompt for input
+            Console.Write("Enter departure airport: (e.g. BOS)");
+            String fromAirport = Console.ReadLine();
+            Console.Write("Enter destination airport: (e.g. AUS)");
+            String toAirport = Console.ReadLine();
+                        
+            // ^airport(from, to) = distance
+            Console.WriteLine("");
+            Console.WriteLine("The distance in miles between "+ fromAirport + " and " + toAirport + 
+                        " is: " + irisNative.GetString("^airport", fromAirport, toAirport) + ".");
+            
+            // Now loop through routes: ^airport(from, to, flight) = fare
+            int isDefined = irisNative.IsDefined("^airport", fromAirport, toAirport);
+            if (isDefined==11 || isDefined==1 ) {
+                Console.WriteLine("The following routes exist for this path:");
+                IRISIterator iterator = irisNative.GetIRISIterator("^airport", fromAirport, toAirport);
+                while (iterator.MoveNext()) {
+                    String fare = (String)iterator.Current;
+                    String flightNumber = (String)iterator.CurrentSubscript;
+                    Console.WriteLine("  - " + flightNumber + ": " + fare + " USD");
+                } 
+            } else {
+                Console.WriteLine("No routes exist for this path.");
+            }
+        }
+
     }
 }

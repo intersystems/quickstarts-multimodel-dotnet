@@ -24,12 +24,12 @@ If you would like to see how to store data natively using .NET:
 
 The output should say:  
 >Printed to ^airport global. The distance in miles between BOS and AUS is: 1698.  
->The following routes exist for this path:
->  -AA150: 450 USD
->  -AA290: 550 USD
+>The following routes exist for this path:  
+>  -AA150: 450 USD  
+>  -AA290: 550 USD  
 
 Other routes may be null.
 
 ## Keep Exploring
 
-To continue with another Java example with InterSystems IRIS, see the [.NET QuickStart](https://learning.intersystems.com/course/view.php?name=.NET%20QS)
+To continue with another .NET example with InterSystems IRIS, see the [.NET QuickStart](https://learning.intersystems.com/course/view.php?name=.NET%20QS)

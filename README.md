@@ -1,4 +1,4 @@
-# Multimodel QuickStart for .NET
+# Multimodel QuickStart for .NET Code Sample
 
 This code shows multi-model access to InterSystems IRIS Data Platform in .NET.
 

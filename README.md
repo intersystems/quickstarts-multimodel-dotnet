@@ -9,6 +9,8 @@ Airport data is stored using objects, retrieved using SQL, and a custom data str
 1. Clone the repo.
 2. Open the `quickstarts-multimodel-dotnet.sln` in Microsoft Visual Studio.
 3. In `multimodelQS.cs` file, change username, password, IP, port and namespace to point to your instance of InterSystems IRIS.
-4. Run code to see objects and SQL working side-by-side.
+4. Uncomment the following two lines and run code to see objects and SQL working side-by-side:
+`// storeAirfare(irisNative);`  
+`// checkAirfare(irisNative);` 
  
-**NOTE:** We recommend to use **Microsoft Visual Studio** to run .NET Multimodel QuickStart code.
+**NOTE:** We recommend to use **Microsoft Visual Studio** to run .NET Multimodel QuickStart code. If you do not have **Microsoft Visual Studio**, please use our Learning Labs to experience the .NET Multimodel QuickStart.

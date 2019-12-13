@@ -193,7 +193,7 @@ namespace Demo{
             
             // Now loop through routes: ^airport(from, to, flight) = fare
             int isDefined = irisNative.IsDefined("^airport", fromAirport, toAirport);
-            if (isDefined==11 || isDefined==1 ) {
+            if (isDefined==11) {
                 Console.WriteLine("The following routes exist for this path:");
                 IRISIterator iterator = irisNative.GetIRISIterator("^airport", fromAirport, toAirport);
                 while (iterator.MoveNext()) {

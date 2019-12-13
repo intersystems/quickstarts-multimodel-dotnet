@@ -8,7 +8,7 @@ namespace Demo{
         private string zip;
         private String city;
         private String state;
-        private double longtitude;
+        private double longitude;
         private double latitude;
         
         public Location(){
@@ -20,10 +20,10 @@ namespace Demo{
             this.state = state;
         }
         
-        public Location(String city, String state, double longtitude, double latitude, String zip) {
+        public Location(String city, String state, double longitude, double latitude, String zip) {
             this.city = city;
             this.state = state;
-            this.longtitude = longtitude;
+            this.longitude = longitude;
             this.latitude = latitude;
             this.zip = zip;
         }
@@ -47,11 +47,11 @@ namespace Demo{
         public void setState(String state) {
             this.state = state;
         }
-        public double getLongtitude() {
-            return longtitude;
+        public double getLongitude() {
+            return longitude;
         }
-        public void setLongtitude(double longtitude) {
-            this.longtitude = longtitude;
+        public void setLongitude(double longitude) {
+            this.longitude = longitude;
         }
         public double getLatitude() {
             return latitude;

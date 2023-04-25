@@ -197,8 +197,8 @@ namespace Demo{
                 Console.WriteLine("The following routes exist for this path:");
                 IRISIterator iterator = irisNative.GetIRISIterator("^airport", fromAirport, toAirport);
                 while (iterator.MoveNext()) {
-                    String fare = (String)iterator.Current;
-                    String flightNumber = (String)iterator.CurrentSubscript;
+                    string fare = System.Text.Encoding.Default.GetString((byte[])iterator.Current);
+		    string flightNumber = System.Text.Encoding.Default.GetString((byte[])iterator.CurrentSubscript);
                     Console.WriteLine("  - " + flightNumber + ": " + fare + " USD");
                 } 
             } else {

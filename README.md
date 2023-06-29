@@ -21,9 +21,10 @@ This sample code shows object, relational, and native access from a .NET applica
 3. Clone this repository.
 4. In your preferred IDE, create a project which includes this repository and the ADO.NET drivers as dependencies. For help, refer to [Connecting Your Application](https://docs.intersystems.com/components/csp/docbook/DocBook.UI.Page.cls?KEY=ADRIVE#ADRIVE_dotnet)
 5. In `multimodelQS.cs`, on lines 20-24, change the username, password, IP, port and namespace to point to your instance of InterSystems IRIS.
-6. Uncomment the following two lines:
+6. In multimodel.csproj, make sure that the target framework setting is appropriate for your system. 
+7. Uncomment the following two lines:
 ```
 // storeAirfare(irisNative);
 // checkAirfare(irisNative);
 ```
-7. Run the code to see objects and SQL working side-by-side.
+8. Run the code to see objects and SQL working side-by-side.

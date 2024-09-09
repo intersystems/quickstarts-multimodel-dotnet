@@ -6,9 +6,9 @@
 ├── README.md  
 ├── multimodel.csproj  
 └── src  
-    ├── Airport.cs  
-    ├── Location.cs  
-    └── MultimodelQS.cs  
+     ├── Airport.cs  
+     ├── Location.cs  
+     └── MultimodelQS.cs  
 
 ## Guided tutorial
 For a guided tutorial using this sample, visit [Accessing Data in .NET Using Multiple Data Models](https://learning.intersystems.com/course/view.php?name=DotNETMultiModel) on the InterSystems learning site. 

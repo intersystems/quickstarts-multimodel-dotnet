@@ -30,8 +30,9 @@ namespace Demo{
 		        EventPersister xepPersister = PersisterFactory.CreatePersister();
 		        xepPersister.Connect(ip,port,Namespace,user,pass); 
 		        Console.WriteLine("Connected to InterSystems IRIS");
-				xepPersister.DeleteExtent("Demo.Airport");   // Remove old test data
-	            xepPersister.ImportSchemaFull("Demo.Airport");   // Import full schema
+			xepPersister.DeleteExtent("Demo.Airport");   // Remove old test data
+			xepPersister.ImportSchemaFull("Demo.Location");   // Import full Demo.Location schema
+	            	xepPersister.ImportSchemaFull("Demo.Airport");   // Import full Demo.Airport schema
 		       
 		        // Create XEP Event for object access
 		        Event xepEvent = xepPersister.GetEvent("Demo.Airport");

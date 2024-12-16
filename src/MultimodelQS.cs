@@ -18,7 +18,7 @@ namespace Demo{
 		static void Main(String[] args) {
 			// If you are using a remote instance, update IP and password here
 			String ip = "localhost";
-			int port = 52773;
+			int port = 1972;
 			String user = "tech";
 			String pass = "demo";
 			String Namespace = "USER";

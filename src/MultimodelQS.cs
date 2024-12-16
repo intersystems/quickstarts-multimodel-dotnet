@@ -31,6 +31,7 @@ namespace Demo{
 		        xepPersister.Connect(ip,port,Namespace,user,pass); 
 		        Console.WriteLine("Connected to InterSystems IRIS");
 			xepPersister.DeleteExtent("Demo.Airport");   // Remove old test data
+			xepPersister.DeleteExtent("Demo.Location");   // Remove old test data
 			xepPersister.ImportSchemaFull("Demo.Location");   // Import full Demo.Location schema
 	            	xepPersister.ImportSchemaFull("Demo.Airport");   // Import full Demo.Airport schema
 		       

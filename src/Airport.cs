@@ -3,13 +3,13 @@
 */
 
 using System;
-using id = InterSystems.XEP.Attributes.Id;
+using Id = InterSystems.XEP.Attributes.Id;
 
 namespace Demo
 {
     class Airport
     {
-        [id(generated = false)]
+        [Id(generated = false)]
         private String code;
         private String name;
         private Location location;

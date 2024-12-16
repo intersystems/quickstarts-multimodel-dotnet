@@ -3,12 +3,12 @@
 */
 
 using System;
-using id = InterSystems.XEP.Attributes.Id;
+using Id = InterSystems.XEP.Attributes.Id;
 namespace Demo
 {
     class Location
     {
-        [id(generated = false)]
+        [Id(generated = false)]
         private string zip;
         private String city;
         private String state;
